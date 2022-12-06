@@ -11,9 +11,13 @@ class Deck
   def initialize
     @cards = []
     RANKS.each.with_index do |rank, i|
-      SUITS.each do |suit|
-        @cards << Card.new(suit, rank, SUITS[i], SYMBOLS[i])
+      SUITS.each.with_index do |suit, j|
+        @cards << Card.new(suit, rank, VALUE[i].to_i, SYMBOLS[j])
       end
     end
+  end
+
+  def pick
+    @cards.pop
   end
 end
