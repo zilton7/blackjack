@@ -31,7 +31,12 @@ class Game
   end
 
   def valuefy(arr)
-    arr.inject(0) { |sum, card| sum + card.value }
+    score = arr.inject(0) { |sum, card| sum + card.value }
+    if score > 21 && arr.any? { |card| card.rank == 'A' }
+      arr.each { |card| score -= 10 if card.rank == 'A' }
+    end
+
+    score
   end
 
   def determine_winner
