@@ -18,6 +18,6 @@ class Deck
   end
 
   def pick
-    @cards.pop
+    @cards.shuffle!.pop
   end
 end

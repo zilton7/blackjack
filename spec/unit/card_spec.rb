@@ -1,14 +1,14 @@
 require_relative '../../card'
 
 RSpec.describe Card do
-  subject { Card.new('hearts', 'ace', 11, '♡') }
+  subject { Card.new('hearts', 'A', 11, '♡') }
 
   it 'has a suit' do
     expect(subject.suit).to eq('hearts')
   end
 
   it 'has a rank' do
-    expect(subject.rank).to eq('ace')
+    expect(subject.rank).to eq('A')
   end
 
   it 'has a value' do

@@ -39,8 +39,8 @@ RSpec.describe Deck do
   end
 
   it 'picks card' do
-    card = subject.pick
-
+    picked_card = subject.pick
+    
     expect(subject.cards.size).to eq(51)
   end
 end
